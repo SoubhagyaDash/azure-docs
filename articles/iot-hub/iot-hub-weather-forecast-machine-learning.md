@@ -3,8 +3,8 @@ title: Weather forecast using Azure Machine Learning with data from IoT Hub | Mi
 description: Use Azure Machine Learning to predict the chance of rain based on the temperature and humidity data your IoT hub collects from a sensor.
 services: iot-hub
 documentationcenter: ''
-author: shizn
-manager: timtl
+author: rangv
+manager: timlt
 tags: ''
 keywords: 'weather forecast machine learning'
 
@@ -14,13 +14,13 @@ ms.devlang: arduino
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/29/2017
-ms.author: xshi
+ms.date: 4/11/2018
+ms.author: rangv
 
 ---
 # Weather forecast using the sensor data from your IoT hub in Azure Machine Learning
 
-![Connection between sensor, IoT device, IoT Hub, Stream Analytics job, Azure machine learning, and Blob storage](media/iot-hub-weather-forecast-machine-learning/1_Connection-azure-machine-learning-iot-hub.png)
+![End-to-end diagram](media/iot-hub-get-started-e2e-diagram/6.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -42,7 +42,7 @@ You learn how to use Azure Machine Learning to do weather forecast (chance of ra
 
 ## What you need
 
-- Tutorial [Connect ESP8266 to Azure IoT Hub](iot-hub-arduino-huzzah-esp8266-get-started.md) completed which covers the following requirements:
+- Tutorial [Setup your device](iot-hub-raspberry-pi-kit-node-get-started.md) completed which covers the following requirements:
   - An active Azure subscription.
   - An Azure IoT hub under your subscription.
   - A client application that sends messages to your Azure IoT hub.
@@ -51,7 +51,7 @@ You learn how to use Azure Machine Learning to do weather forecast (chance of ra
 ## Deploy the weather prediction model as a web service
 
 1. Go to the [weather prediction model page](https://gallery.cortanaintelligence.com/Experiment/Weather-prediction-model-1).
-1. Click **Open in Studio** in Microsoft Azure Machine Leaning Studio.
+1. Click **Open in Studio** in Microsoft Azure Machine Learning Studio.
    ![Open the weather prediction model page in Cortana Intelligence Gallery](media/iot-hub-weather-forecast-machine-learning/2_weather-prediction-model-in-cortana-intelligence-gallery.png)
 1. Click **Run** to validate the steps in the model. This step might take 2 minutes to complete.
    ![Open the weather prediction model in Azure Machine Learning Studio](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
@@ -71,22 +71,13 @@ You learn how to use Azure Machine Learning to do weather forecast (chance of ra
 
 1. Open the Excel workbook, make a note of the **WEB SERVICE URL** and **ACCESS KEY**.
 
-## Add a consumer group to your IoT hub
-
-Consumer groups are used by applications to read data from Azure IoT Hub. In this lesson, you create a consumer group to be used by the web service to read data from your IoT hub.
-
-To add a consumer group to your IoT hub, follow these steps:
-
-1. In the [Azure portal](https://ms.portal.azure.com/), open your IoT hub.
-1. Click **Endpoints** on the left pane, select **Events** on the middle pane, enter a name under **Consumer groups** on the right pane, and then click **Save**.
-
-   ![Add a consumer group to your IoT hub](media/iot-hub-weather-forecast-machine-learning/6_add-consumer-group-iot-hub-azure.png)
+[!INCLUDE [iot-hub-get-started-create-consumer-group](../../includes/iot-hub-get-started-create-consumer-group.md)]
 
 ## Create, configure, and run a Stream Analytics job
 
 ### Create a Stream Analytics job
 
-1. In the [Azure portal](https://ms.portal.azure.com/), click **New** > **Internet of Things** > **Stream Analytics job**.
+1. In the [Azure portal](https://portal.azure.com/), click **Create a resource** > **Internet of Things** > **Stream Analytics job**.
 1. Enter the following information for the job.
 
    **Job name**: The name of the job. The name must be globally unique.

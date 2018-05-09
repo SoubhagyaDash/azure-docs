@@ -1,47 +1,83 @@
 ---
-title: Content Moderator get started | Microsoft Docs
-description: Sign up for the review tool to get started with automated moderation and see results in your browser.
+title: Azure Content Moderator get started | Microsoft Docs
+description: How to get started with Azure Content Moderator.
 services: cognitive-services
 author: sanjeev3
 manager: mikemcca
-
 ms.service: cognitive-services
-ms.technology: content-moderator
+ms.component: content-moderator
 ms.topic: article
-ms.date: 02/25/2017
+ms.date: 01/15/2018
 ms.author: sajagtap
 ---
 
-# Get Started
-Start by signing up for the [review tool](http://contentmoderator.cognitive.microsoft.com/ "Content Moderator Review Tool") and uploading images or entering text to explore the automated moderation and review the results right within your web browser.
+# Get started with Content Moderator
 
-Also read: [Review Tool User Guide](review-tool-user-guide/human-in-the-loop.md)
+You get started with Content Moderator APIs and the review tool in the following ways:
 
-## What if I want to directly try the image and text moderation APIs?
-Use your free trial key for the Content Moderator APIs from the **Connectors** TAB in the **Settings** section. When you are ready to purchase, you can [upgrade to a paid subscription](https://portal.azure.com/#create/Microsoft.CognitiveServices/apitype/ContentModerator) and swap out the keys.
+- [Start with the review tool](#start-with-the-review-tool) to create both the API keys and a review team. Explore the review tool and learn how to integrate by using the Content Moderator APIs.
+- [Subscribe to Content Moderator](#start-with-the-apis) in the Azure portal. You still need to sign up online to create a review team.
+- [Use the Flow connector and templates](https://flow.microsoft.com/connectors/shared_cognitiveservicescontentmoderator/content-moderator/) to check out a wide range of integrations with an easy-to-use designer.
 
-![Your Content Moderator API Key](images/Moderator-API-Key2.PNG)
+Regardless of the option you choose, see the [Managing credentials](review-tool-user-guide/credentials.md) article to find your API credentials.
 
-## 1. Sign up and invite others
-Sign up to try the [review tool](http://contentmoderator.cognitive.microsoft.com/ "Content Moderator Review Tool") by either using your existing Microsoft account or create a new account within the review tool. Optionally, invite your colleagues by entering their email addresses.
+## Start with the review tool
+[Sign up](http://contentmoderator.cognitive.microsoft.com/) on the Content Moderator review tool web site.
+
+![Content Moderator Home Page](images/homepage.PNG)
+
+### Create a review team
+Give your team a name. If you want to invite your colleagues, you can do so by entering their email addresses.
 
 ![Invite team member](images/QuickStart-2-small.png)
 
-## 2. Upload images or enter text
-Use the File Upload feature to upload a set of sample images or enter your text for moderation. You will find a link to download the sample images or use the sample text.
+### Upload images or enter text
+Click **Try > Image** or **Try > Text**. Upload up to five sample images or enter sample text for moderation.
 
-![Upload files](images/QuickStart-3.PNG)
+![Try Image or Text Moderation](images/tryimagesortext.png)
 
-## 3. Submit for automated moderation
-Submit your content for automated moderation. Internally, the review tool will call the moderation APIs to scan your content. Once the scanning is complete, you will see a message informing you about the results waiting for your review.
+### Submit for automated moderation
+Submit your content for automated moderation. Internally, the review tool calls the moderation APIs to scan your content. Once the scanning is complete, you see a message informing you about the results waiting for your review.
 
-![Moderate files](images/QuickStart-4.PNG)
+![Moderate files](images/submitted.png)
 
-## 4. Review and confirm results
-As your business application calls the Moderator APIs, the tagged content will start queuing up, ready to be reviewed by the human review teams. You can quickly review large volumes of content using this approach. You will be doing a few different things as part of your moderation workflow such as:
+### Review and confirm results
+Review the auto-moderated tags, change if needed, and submit by using the **Next** button. As your business application calls the Moderator APIs, the tagged content starts queuing up, ready to be reviewed by the human review teams. You quickly review large volumes of content using this approach.
 
-- Browsing the reviews on-screen
-- Reviewing moderation scores and results
-- Confirming or modifying the tags returned by the API
+![Review results](images/reviewresults.png)
 
-![Review results](images/QuickStart-5.PNG)
+Learn how to use all the [review tool's features](Review-Tool-User-Guide/human-in-the-loop.md) or continue with the next section to learn about the APIs. Skip the sign-up step because you have the API key provisioned for you in the review tool as shown in the [Managing credentials](review-tool-user-guide/credentials.md) article.
+
+### Use the APIs
+
+Now that you've explored the content moderation and review tool experience, learn how to integrate Content Moderator with your business applications. Use the following section to learn more and fast-track your understanding with the SDKs and samples.
+
+## Start with the APIs
+
+[Subscribe to Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) in the Azure portal. Start with one of the following APIs:
+
+### Image moderation
+
+Start with the [API console](try-image-api.md) or use the [.NET quickstart](image-moderation-quickstart-dotnet.md) to scan images and detect potential adult and racy content by using tags, confidence scores, and other extracted information.
+
+### Text moderation
+
+Start with the [API console](try-text-api.md) or use the [.NET quickstart](text-moderation-quickstart-dotnet.md) to scan text content for potential profanity, machine-assisted unwanted text classification (preview), and personally identifiable information (PII). 
+
+
+### Video moderation
+
+Start with the [.NET quickstart](video-moderation-api.md) to scan videos and detect potential adult and racy content. 
+
+
+### Review APIs
+
+Start here by choosing from the Job, Review, and Workflow APIs.
+
+- The [Job API](try-review-api-job.md) scans your content by using the moderation APIs and generates reviews in the review tool. 
+- The [Review API](try-review-api-review.md) directly creates image, text, or video reviews for human moderators without first scanning the content. 
+- The [Workflow API](try-review-api-workflow.md) creates, updates, and gets details about the custom workflows that your team creates.
+
+## Next steps
+
+Learn more about content moderation starting with the [image moderation API](image-moderation-api.md).

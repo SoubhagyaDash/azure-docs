@@ -1,19 +1,18 @@
---- 
-title: FAQs for the Computer Vision API | Microsoft Docs 
-description: Get answers to frequently asked questions about the Computer Vision API in Microsoft Cognitive Services. 
-services: cognitive-services 
-author: JuliaNik 
-manager: ytkuo 
-
-ms.service: cognitive-services 
-ms.technology: computer-vision 
-ms.topic: article 
-ms.date: 01/26/2017 
-ms.author: juliakuz 
+---
+title: FAQs for the Computer Vision API | Microsoft Docs
+description: Get answers to frequently asked questions about the Computer Vision API in Microsoft Cognitive Services.
+services: cognitive-services
+author: KellyDF
+manager: corncar
+ms.service: cognitive-services
+ms.component: computer-vision
+ms.topic: article
+ms.date: 01/26/2017
+ms.author: kefre
 ---
 
 # Computer Vision API Frequently Asked Questions
-## If you can't find answers to your questions in this FAQ, try asking the Computer Vision API community on [StackOverflow](https://stackoverflow.com/questions/tagged/project-oxford+or+microsoft-cognitive) or contact [Help and Support on UserVoice](https://cognitive.uservoice.com/)
+### If you can't find answers to your questions in this FAQ, try asking the Computer Vision API community on [StackOverflow](https://stackoverflow.com/questions/tagged/project-oxford+or+microsoft-cognitive) or contact [Help and Support on UserVoice](https://cognitive.uservoice.com/)
 
 -----
 
@@ -25,7 +24,7 @@ ms.author: juliakuz
 
 **Question**: *Can Computer Vision be used locally without an internet connection?*
 
-**Answer**: We currently do not offer an on-premise or local solution.
+**Answer**: We currently do not offer an on-premises or local solution.
 
 -----
 

@@ -1,10 +1,10 @@
 ---
 title: IoT remote monitoring and notifications with Azure Logic Apps | Microsoft Docs
-description: Use Azure Logic Apps for IoT temperature monitoring on your IoT hub and automatically sending email notifications to your mailbox for anomalies detected.
+description: Use Azure Logic Apps for IoT temperature monitoring on your IoT hub and automatically send email notifications to your mailbox for any anomalies detected.
 services: iot-hub
 documentationcenter: ''
-author: shizn
-manager: timtl
+author: rangv
+manager: timlt
 tags: ''
 keywords: 'iot monitoring, iot notifications, iot temperature monitoring'
 
@@ -14,11 +14,13 @@ ms.devlang: arduino
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/12/2017
-ms.author: xshi
+ms.date: 4/11/2018
+ms.author: rangv
 
 ---
 # IoT remote monitoring and notifications with Azure Logic Apps connecting your IoT hub and mailbox
+
+![End-to-end diagram](media/iot-hub-get-started-e2e-diagram/7.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -36,7 +38,7 @@ You learn how to create a logic app that connects your IoT hub and your mailbox 
 
 ## What you need
 
-* Tutorial [Connect ESP8266 to Azure IoT Hub](iot-hub-arduino-huzzah-esp8266-get-started.md) completed which covers the following requirements:
+* Tutorial [Setup your device](iot-hub-raspberry-pi-kit-node-get-started.md) completed which covers the following requirements:
   * An active Azure subscription.
   * An Azure IoT hub under your subscription.
   * A client application that sends messages to your Azure IoT hub.
@@ -45,7 +47,7 @@ You learn how to create a logic app that connects your IoT hub and your mailbox 
 
 ### Create a service bus namespace
 
-1. On the [Azure portal](https://portal.azure.com/), click **New** > **Enterprise Integration** > **Service Bus**.
+1. On the [Azure portal](https://portal.azure.com/), click **Create a resource** > **Enterprise Integration** > **Service Bus**.
 1. Provide the following information:
 
    **Name**: The name of the service bus.
@@ -106,7 +108,7 @@ You learn how to create a logic app that connects your IoT hub and your mailbox 
 
 ### Create a logic app
 
-1. In the [Azure portal](https://portal.azure.com/), click **New** > **Enterprise Integration** > **Logic App**.
+1. In the [Azure portal](https://portal.azure.com/), click **Create a resource** > **Enterprise Integration** > **Logic App**.
 1. Enter the following information:
 
    **Name**: The name of the logic app.
@@ -138,6 +140,7 @@ You learn how to create a logic app that connects your IoT hub and your mailbox 
    1. Select the queue that you created and enter `175` for **Maximum message count**
 
       ![Specify the maximum message count for the service bus connection in your logic app](media/iot-hub-monitoring-notifications-with-azure-logic-apps/8_specify-maximum-message-count-for-service-bus-connection-logic-app-azure-portal.png)
+   1. Click "Save" button to save the changes.
 
 1. Create an SMTP service connection.
    1. Click **New step** > **Add an action**.
